@@ -33,6 +33,7 @@ export class Config extends BaseConfig {
     args.contextBuilder.patchGlobal({
       ui: "ff",
       profile: false,
+      converterCache: true,
       uiOptions: {
         _: {
           filterInputFunc: "cmdline#input",
