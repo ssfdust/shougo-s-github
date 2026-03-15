@@ -34,6 +34,7 @@ export class Config extends BaseConfig {
       ui: "ff",
       profile: false,
       converterCache: true,
+      matcherConcurrency: 4,
       uiOptions: {
         _: {
           filterInputFunc: "cmdline#input",
@@ -290,6 +291,11 @@ export class Config extends BaseConfig {
       kindParams: {
         file: {
           trashCommand: ["gtrash", "put"],
+        },
+      },
+      filterOptions: {
+        _: {
+          parallelSafe: true,
         },
       },
       actionOptions: {
