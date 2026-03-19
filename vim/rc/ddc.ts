@@ -19,6 +19,7 @@ export class Config extends BaseConfig {
 
     args.contextBuilder.patchGlobal({
       ui: "pum",
+      matcherConcurrency: 4,
       dynamicUi: async (denops: Denops, args: Record<string, unknown>) => {
         const uiArgs = args as {
           items: DdcItem[];
@@ -243,6 +244,11 @@ export class Config extends BaseConfig {
         },
         shell_native: {
           shell: "zsh",
+        },
+      },
+      filterOptions: {
+        _: {
+          parallelSafe: true,
         },
       },
       filterParams: {
