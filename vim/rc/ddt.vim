@@ -135,8 +135,8 @@ nnoremap <buffer> [Space]gs
       \   str: 'git status',
       \ })<CR>
 nnoremap <buffer> [Space]gA
-      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
-      \   str: 'git commit --amend -m ',
+      \ <Cmd>call ddt#ui#do_action('send', #{
+      \   str: 'git commit --amend',
       \ })<CR>
 nnoremap <buffer> <C-h> <Cmd>Ddu -name=ddt -sync
       \ -input='`ddt#ui#get_input()`'
@@ -200,8 +200,8 @@ nnoremap <buffer> [Space]gs
       \   str: 'git status',
       \ })<CR>
 nnoremap <buffer> [Space]gA
-      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
-      \   str: 'git commit --amend -m ""',
+      \ <Cmd>call ddt#ui#do_action('send', #{
+      \   str: 'git commit --amend',
       \ })<CR>
 inoremap <buffer><expr> <C-n>
       \   pum#visible()

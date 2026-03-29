@@ -102,14 +102,39 @@ export class Config extends BaseConfig {
       const action = tomlExt.actions.load;
 
       const tomlPromises = [
-        { path: "$BASE_DIR/merge.toml", lazy: false },
-        { path: "$BASE_DIR/dpp.toml", lazy: false },
-        { path: "$BASE_DIR/lazy.toml", lazy: true },
-        { path: "$BASE_DIR/denops.toml", lazy: true },
-        { path: "$BASE_DIR/ddc.toml", lazy: true },
-        { path: "$BASE_DIR/ddu.toml", lazy: true },
-        { path: "$BASE_DIR/ddx.toml", lazy: true },
-        { path: "$BASE_DIR/ddt.toml", lazy: true },
+        {
+          path: "$BASE_DIR/merge.toml",
+          lazy: false,
+        },
+        {
+          path: "$BASE_DIR/dpp.toml",
+          lazy: false,
+        },
+        {
+          path: "$BASE_DIR/lazy.toml",
+          lazy: true,
+        },
+        {
+          path: "$BASE_DIR/denops.toml",
+          lazy: true,
+          depends: "denops.vim",
+        },
+        {
+          path: "$BASE_DIR/ddc.toml",
+          lazy: true,
+        },
+        {
+          path: "$BASE_DIR/ddu.toml",
+          lazy: true,
+        },
+        {
+          path: "$BASE_DIR/ddx.toml",
+          lazy: true,
+        },
+        {
+          path: "$BASE_DIR/ddt.toml",
+          lazy: true,
+        },
         {
           path: hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
           lazy: true,

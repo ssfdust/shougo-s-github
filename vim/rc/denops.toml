@@ -21,18 +21,16 @@ hook_source = '''
   "let g:denops_server_addr = '127.0.0.1:32123'
 '''
 
-[[plugins]]
-repo = 'vim-denops/denops-startup-recorder.vim'
-on_source = 'denops.vim'
+#[[plugins]]
+#repo = 'vim-denops/denops-startup-recorder.vim'
+#on_source = 'denops.vim'
 
 [[plugins]]
 repo = 'lambdalisue/kensaku.vim'
-depends = 'denops.vim'
 denops_wait = false
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-depends = 'denops.vim'
 on_map = { ict = '<Plug>(skkeleton-' }
 denops_wait = false
 hooks_file = '$BASE_DIR/skkeleton.vim'
@@ -53,7 +51,11 @@ hook_source = '''
 
 [[plugins]]
 repo = 'gw31415/denops-sixel-view.vim'
-depends = 'denops.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-guise'
+on_source = 'ddt.vim'
+
 
 ## NOTE: Disable lspoints.  It does not support denols imports feature.
 #[[plugins]]
