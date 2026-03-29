@@ -127,13 +127,17 @@ nnoremap <buffer> [Space]gd
       \   str: 'git diff',
       \ })<CR>
 nnoremap <buffer> [Space]gc
-      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
-      \   str: 'git commit -m ',
+      \ <Cmd>call ddt#ui#do_action('send', #{
+      \   str: 'git commit',
       \ })<CR>
 nnoremap <buffer> [Space]gs
       \ <Cmd>call ddt#ui#do_action('send', #{
       \   str: 'git status',
       \ })<CR>
+nnoremap <buffer> [Space]ga
+      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
+      \   str: 'git add ',
+      \ })<CR>A
 nnoremap <buffer> [Space]gA
       \ <Cmd>call ddt#ui#do_action('send', #{
       \   str: 'git commit --amend',
@@ -192,13 +196,17 @@ nnoremap <buffer> [Space]gd
       \   str: 'git diff',
       \ })<CR>
 nnoremap <buffer> [Space]gc
-      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
-      \   str: 'git commit -m ""',
+      \ <Cmd>call ddt#ui#do_action('send', #{
+      \   str: 'git commit',
       \ })<CR>
 nnoremap <buffer> [Space]gs
       \ <Cmd>call ddt#ui#do_action('send', #{
       \   str: 'git status',
       \ })<CR>
+nnoremap <buffer> [Space]ga
+      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
+      \   str: 'git add ',
+      \ })<CR>A
 nnoremap <buffer> [Space]gA
       \ <Cmd>call ddt#ui#do_action('send', #{
       \   str: 'git commit --amend',
