@@ -100,8 +100,11 @@ inoremap <expr> <C-l>  ddc#map#manual_complete()
 
 " Mouse support
 inoremap <LeftMouse>  <Cmd>call pum#map#confirm_mouse()<CR>
+inoremap <RightMouse>  <Cmd>call pum#map#select_mouse()<CR>
 cnoremap <LeftMouse>  <Cmd>call pum#map#confirm_mouse()<CR>
+cnoremap <RightMouse>  <Cmd>call pum#map#select_mouse()<CR>
 tnoremap <LeftMouse>  <Cmd>call pum#map#confirm_mouse()<CR>
+tnoremap <RightMouse>  <Cmd>call pum#map#select_mouse()<CR>
 
 " For command line mode completion
 cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>

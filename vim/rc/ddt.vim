@@ -211,6 +211,10 @@ nnoremap <buffer> [Space]gA
       \ <Cmd>call ddt#ui#do_action('send', #{
       \   str: 'git commit --amend',
       \ })<CR>
+nnoremap <buffer> [Space]gp
+      \ <Cmd>call ddt#ui#do_action('setPrompt', #{
+      \   str: 'git push',
+      \ })<CR>
 inoremap <buffer><expr> <C-n>
       \   pum#visible()
       \ ? '<Cmd>call pum#map#insert_relative(+1, "empty")<CR>'
