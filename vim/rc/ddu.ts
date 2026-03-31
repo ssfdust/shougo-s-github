@@ -287,6 +287,9 @@ export class Config extends BaseConfig {
         ddx: {
           defaultAction: "open",
         },
+        source: {
+          defaultAction: "execute",
+        },
       },
       kindParams: {
         file: {
