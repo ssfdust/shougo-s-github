@@ -30,7 +30,7 @@ call skkeleton#config(#{
 " For SKK server test.
 "call skkeleton#config(#{
 "      \   sources: [
-"      \     "deno_kv",
+"      \     "skk_dictionary",
 "      \     "skk_server",
 "      \   ],
 "      \ })
