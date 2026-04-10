@@ -241,10 +241,21 @@ if '+completepopup'->exists()
 endif
 " Don't complete from other buffer.
 set complete=.
-" Set popup menu max height.
-set pumheight=5
-" Set popup menu min width.
-set pumwidth=0
+
+" Set popup menu options.
+if exists('&pumopt')
+  set pumopt=width:0,height:5,opacity:80,border:round
+else
+  set pumwidth=0
+  set pumheight=5
+
+  if has('nvim')
+    set pumborder=rounded
+  else
+    set pumborder=round
+  endif
+endif
+
 if !has('nvim')
   " Use "/" for path completion
   " NOTE: It does not work in neovim

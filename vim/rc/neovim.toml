@@ -1,25 +1,64 @@
+# NOTE: Disable nvim-treesitter.  It is archived now.
+#[[plugins]]
+#repo = 'nvim-treesitter/nvim-treesitter'
+#if = '!has("win32")'
+#on_event = ['BufRead', 'CursorHold']
+#on_ft = ['help']
+#rev = 'main'
+#hook_post_update = 'TSUpdate'
+#lua_source = '''
+#  if not vim.fn.executable('tree-sitter') then
+#    vim.print('nvim-treesitter requires "treesitter-cli".')
+#    return
+#  end
+#
+#  -- Install parsers
+#  require'nvim-treesitter'.install {
+#    'c',
+#    'javascript',
+#    'rust',
+#    'python',
+#    'toml',
+#    'typescript',
+#  }
+#
+#  -- Enable highlight
+#  vim.api.nvim_create_autocmd('FileType', {
+#    pattern = {
+#      'c',
+#      'python',
+#      'rust',
+#      'typescript',
+#      'vim',
+#    },
+#    callback = function()
+#      vim.treesitter.start()
+#    end,
+#  })
+#'''
+
 [[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
+repo = 'romus204/tree-sitter-manager.nvim'
 if = '!has("win32")'
 on_event = ['BufRead', 'CursorHold']
 on_ft = ['help']
-rev = 'main'
-hook_post_update = 'TSUpdate'
 lua_source = '''
   if not vim.fn.executable('tree-sitter') then
-    vim.print('nvim-treesitter requires "treesitter-cli".')
+    vim.print('tree-sitter-manager.nvim requires "treesitter-cli".')
     return
   end
 
   -- Install parsers
-  require'nvim-treesitter'.install {
-    'c',
-    'javascript',
-    'rust',
-    'python',
-    'toml',
-    'typescript',
-  }
+  require("tree-sitter-manager").setup({
+    ensure_installed = {
+      'c',
+      'javascript',
+      'rust',
+      'python',
+      'toml',
+      'typescript',
+    },
+  })
 
   -- Enable highlight
   vim.api.nvim_create_autocmd('FileType', {
@@ -299,7 +338,6 @@ lua_source = '''
 
 [[plugins]]
 repo = 'atusy/tsnode-marker.nvim'
-depends = 'nvim-treesitter'
 on_ft = 'markdown'
 lua_source = '''
   vim.api.nvim_create_autocmd('FileType', {
@@ -313,7 +351,3 @@ lua_source = '''
     end,
   })
 '''
-
-[[plugins]]
-repo = 'chomosuke/typst-preview.nvim'
-on_ft = 'typst'
