@@ -137,3 +137,10 @@ hook_source = '''
 #    \   yaml: v:true,
 #    \ }
 #'''
+
+[[plugins]]
+repo = 'https://github.com/machakann/vim-sandwich'
+on_event = 'ModeChanged'
+hook_source = '''
+  call operator#sandwich#set('add', 'char', 'skip_space', 1)
+'''

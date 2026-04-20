@@ -170,11 +170,6 @@ export class Config extends BaseConfig {
         markdown: {
           sorters: [],
         },
-        line: {
-          matchers: [
-            "matcher_kensaku",
-          ],
-        },
         path_history: {
           defaultAction: "uiCd",
         },
@@ -227,9 +222,6 @@ export class Config extends BaseConfig {
         },
       },
       filterParams: {
-        matcher_kensaku: {
-          highlightMatched: "PmenuMatch",
-        },
         matcher_substring: {
           highlightMatched: "PmenuMatch",
         },
